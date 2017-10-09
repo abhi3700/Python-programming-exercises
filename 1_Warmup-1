@@ -9,6 +9,15 @@ sleep_in(True, False) → False
 sleep_in(False, True) → True
 
 Solution: 
+def sleep_in(weekday, vacation):
+    if(not weekday or vacation):
+        print("True")
+    else:
+        print("False")
+
+sleep_in(False, False) #→ True
+sleep_in(True, False) #→ False
+sleep_in(False, True) #→ True
 #----------------------------------------#
 
 #----------------------------------------#
@@ -23,16 +32,59 @@ monkey_trouble(False, False) → True
 monkey_trouble(True, False) → False
 
 Solution: 
+def monkey_trouble(a_smile, b_smile):
+    if a_smile and b_smile:
+        print("True")
+    elif not a_smile and not b_smile:
+        print("True")
+    else:
+        print("False")
+        
+monkey_trouble(True, True) #→ True
+monkey_trouble(False, False) #→ True
+monkey_trouble(True, False) #→ False
 #----------------------------------------#
 
 #----------------------------------------#
-3. Warmup-1 > monkey_trouble
+3. Warmup-1 > sum_double 
 
 Question:
+Given two int values, return their sum. Unless the two values are the same, then return double their sum.
 
+Check for these cases:
+sum_double(1, 2) → 3
+sum_double(3, 2) → 5
+sum_double(2, 2) → 8 
 
-Check for these cases: 
+Solution: 
+def sum_double(a, b):
+    # Store the sum in a local variable
+      sum = a + b
+      if (a == b):
+        sum = sum * 2
+      print(sum)
+    
+#Alternative solution - 
+#    if (a == b):
+#        print((a+b)*2)
+#    else:
+#        print(a+b)
 
+sum_double(1, 2) #→ 3
+sum_double(3, 2) #→ 5
+sum_double(2, 2) #→ 8
+#----------------------------------------#
+
+#----------------------------------------#
+4. Warmup-1 > diff21 
+
+Question:
+Given an int n, return the absolute difference between n and 21, except return double the absolute difference if n is over 21.
+
+Check for these cases:
+diff21(19) → 2
+diff21(10) → 11
+diff21(21) → 0
 
 Solution: 
 #----------------------------------------#
