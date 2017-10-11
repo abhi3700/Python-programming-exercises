@@ -243,7 +243,213 @@ missing_char('kitten', 4) #→ 'kittn'
 #----------------------------------------#
 
 #----------------------------------------#
-11. Warmup-1 > 
+11. Warmup-1 > front_back_reverse
+
+Question:
+Given a string, find the reversed string.
+
+Check for these cases:
+front_back_rev('code') → 'eodc'
+front_back_rev('a') → 'a'
+front_back('ab') → 'ba'
+
+Solution: 
+def front_back_rev(str): 
+    rstr = ""  # initialized the unused variable.
+    for i in range(len(str)):
+        rstr += str[(len(str)-1)-i]
+    print(rstr)
+
+front_back_rev('code') #→ 'edoc'
+front_back_rev('a') #→ 'a'
+front_back_rev('ab') #→ 'ba'
+#----------------------------------------#
+
+#----------------------------------------#
+12. Warmup-1 > front_back
+
+Question:
+Given a string, return a new string where the first and last chars have been exchanged.
+
+Check for these cases:
+front_back('code') → 'eodc'
+front_back('a') → 'a'
+front_back('ab') → 'ba'
+
+Solution: 
+def front_back(str):
+    if(len(str)<=1):  # if the string is of single character, print the same string.
+        print(str)
+    else:
+        front = str[0]  # 1st character
+        mid = str[1:len(str)-1]
+        last = str[len(str)-1] # last character
+        new_str = last + mid + front # string added in reverse order, with middle part same as previous.
+        print(new_str)
+
+front_back('code') #→ 'eodc'
+front_back('a') #→ 'a'
+front_back('ab') #→ 'ba'
+#----------------------------------------#
+
+#----------------------------------------#
+13. Warmup-1 > front3
+
+Question:
+Given a string, we'll say that the front is the first 3 chars of the string. If the string length is less than 3, the front is whatever is there. Return a new string which is 3 copies of the front.
+
+Check for these cases:
+front3('Java') → 'JavJavJav'
+front3('Chocolate') → 'ChoChoCho'
+front3('abc') → 'abcabcabc'
+
+Solution: 
+def front3(str):
+    if(len(str)>=3): # if the same string has 3 or more characters string, print the required string
+        print(3 * str[0:3])  # str[0:3] means from str[0] to str[2]
+    else:          # if the string has less than 3 character string, print the same string.
+        print(3*str)
+
+front3('Java') #→ 'JavJavJav'
+front3('Chocolate') #→ 'ChoChoCho'
+front3('abc') #→ 'abcabcabc'
+#----------------------------------------#
+
+#----------------------------------------#
+14. Warmup-2 > string_times
+
+Question:
+Given a string and a non-negative int n, return a larger string that is n copies of the original string.
+
+Check for these cases:
+string_times('Hi', 2) → 'HiHi'
+string_times('Hi', 3) → 'HiHiHi'
+string_times('Hi', 1) → 'Hi'
+
+Solution: 
+def string_times(str, n):
+    if(n>0):
+        print(n * str)
+    else:
+        return -1
+
+string_times('Hi', 2) #→ 'HiHi'
+string_times('Hi', 3) #→ 'HiHiHi'
+string_times('Hi', 1) #→ 'Hi'
+#----------------------------------------#
+
+#----------------------------------------#
+15. Warmup-2 > front_times 
+
+Question:
+Given a string and a non-negative int n, we'll say that the front of the string is the first 3 chars, or whatever is there if the string is less than length 3. Return n copies of the front;
+
+Check for these cases:
+front_times('Chocolate', 2) → 'ChoCho'
+front_times('Chocolate', 3) → 'ChoChoCho'
+front_times('Abc', 3) → 'AbcAbcAbc'
+
+Solution: 
+def front_times(str, n):
+    if(n>0 and str != ""):
+        front = str[0:3]
+        print(n * front)
+    else:
+        return -1
+
+front_times('Chocolate', 2) #→ 'ChoCho'
+front_times('Chocolate', 3) #→ 'ChoChoCho'
+front_times('Abc', 3) #→ 'AbcAbcAbc'
+#----------------------------------------#
+
+#----------------------------------------#
+16. Warmup-2 > string_bits 
+
+Question:
+Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+
+Check for these cases:
+string_bits('Hello') → 'Hlo'
+string_bits('Hi') → 'H'
+string_bits('Heeololeo') → 'Hello'
+
+Solution: 
+def string_bits(str):
+    nstr = ""
+    for i in range(0,len(str),2):   # e.g. len = 5, so, i = 0,2,4
+        nstr += str[i]
+    print(nstr)
+
+string_bits('Hello') #→ 'Hlo'
+string_bits('Hi') #→ 'H'
+string_bits('Heeololeo') #→ 'Hello'
+#----------------------------------------#
+
+#----------------------------------------#
+17. Warmup-2 > string_splosion 
+
+Question:
+Given a non-empty string like "Code" return a string like "CCoCodCode".
+
+Check for these cases:
+string_splosion('Code') → 'CCoCodCode'
+string_splosion('abc') → 'aababc'
+string_splosion('ab') → 'aab'
+
+Solution: 
+def string_splosion(str):
+    nstr = ""
+    for i in range(len(str)):
+        nstr += str[:i+1]     # gives 'CCoCodCode'
+        #nstr += str[0:len(str)-i]  # gives 'CodeCodCoC'
+    print(nstr)
+
+string_splosion('Code') #→ 'CCoCodCode'
+string_splosion('abc') #→ 'aababc'
+string_splosion('ab') #→ 'aab'
+#----------------------------------------#
+
+#----------------------------------------#
+18. Warmup-2 > 
+
+Question:
+Given a string, return the count of the number of times that a substring length 2 appears in the string and also as the last 2 chars of the string, so "hixxxhi" yields 1 (we won't count the end substring).
+
+Check for these cases:
+last2('hixxhi') → 1
+last2('xaxxaxaxx') → 1
+last2('axxxaaxx') → 2
+
+Solution: 
+
+#----------------------------------------#
+
+#----------------------------------------#
+19. Warmup-2 > array_count9 
+
+Question:
+Given an array of ints, return the number of 9's in the array.
+
+Check for these cases:
+array_count9([1, 2, 9]) → 1
+array_count9([1, 9, 9]) → 2
+array_count9([1, 9, 9, 3, 9]) → 3
+
+Solution: 
+def array_count9(nums):
+    count = 0
+    for num in nums:
+        if(num == 9):
+            count = count + 1
+    print(count)
+    
+array_count9([1, 2, 9]) #→ 1
+array_count9([1, 9, 9]) #→ 2
+array_count9([1, 9, 9, 3, 9]) #→ 3
+#----------------------------------------#
+
+#----------------------------------------#
+20. Warmup-2 > 
 
 Question:
 
@@ -256,33 +462,7 @@ Solution:
 #----------------------------------------#
 
 #----------------------------------------#
-12. Warmup-1 > 
-
-Question:
-
-
-Check for these cases:
-
-
-Solution: 
-
-#----------------------------------------#
-
-#----------------------------------------#
-13. Warmup-1 > 
-
-Question:
-
-
-Check for these cases:
-
-
-Solution: 
-
-#----------------------------------------#
-
-#----------------------------------------#
-14. Warmup-1 > 
+21. Warmup-2 > 
 
 Question:
 
