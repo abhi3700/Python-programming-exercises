@@ -89,6 +89,15 @@ extra_end('ab') → 'ababab'
 extra_end('Hi') → 'HiHiHi'
 
 Solution: 
+def extra_end(str):
+    if len(str) < 2:
+        return str
+    print(str[-2:] * 3)
+    
+extra_end('Hello') #→ 'lololo'
+extra_end('ab') #→ 'ababab'
+extra_end('Hi') #→ 'HiHiHi'
+extra_end('H')
 #----------------------------------------#
 
 #----------------------------------------#
@@ -103,6 +112,14 @@ first_two('abcdefg') → 'ab'
 first_two('ab') → 'ab' 
 
 Solution: 
+def first_two(str):
+    if len(str) < 2:
+        return str
+    print(str[:2])
+    
+first_two('Hello') #→ 'He'
+first_two('abcdefg') #→ 'ab'
+first_two('ab') #→ 'ab'
 #----------------------------------------#
 
 #----------------------------------------#
@@ -117,6 +134,15 @@ first_half('HelloThere') → 'Hello'
 first_half('abcdef') → 'abc'
 
 Solution: 
+def first_half(str):
+    if len(str) % 2 != 0:
+        print("The length of the string is Odd.")
+    str_half = int(len(str)/2) # As division always return float type no, So convert it into 'int'
+    print(str[:str_half])
+    
+first_half('WooHoo') #→ 'Woo'
+first_half('HelloThere') #→ 'Hello'
+first_half('abcdef') #→ 'abc'
 #----------------------------------------#
 
 #----------------------------------------#
@@ -131,6 +157,28 @@ without_end('java') → 'av'
 without_end('coding') → 'odin'
 
 Solution: 
+def without_end(str):
+    if len(str) < 2:
+        return str
+    
+    # If the num is even,
+    if len(str) % 2 == 0:
+        half_len_str = int(len(str)/2)
+        front = str[1:half_len_str]
+        rear = str[-half_len_str:-1]
+        print(front + rear)
+    
+    # If the num is odd,
+    else:
+        half_len_str = int(len(str)/2)
+        front = str[1:half_len_str]
+        rear = str[-half_len_str-1:-1]
+        print(front + rear)    
+    
+without_end('Hello') #→ 'ell'
+without_end('java') #→ 'av'
+without_end('ava') #→ 'v'
+without_end('coding') #→ 'odin'
 #----------------------------------------#
 
 #----------------------------------------#
@@ -145,6 +193,21 @@ combo_string('hi', 'Hello') → 'hiHellohi'
 combo_string('aaa', 'b') → 'baaab'
 
 Solution: 
+def combo_string(a, b):
+    short = ""
+    long = ""
+    if len(a) < len(b):
+        short = a
+        long = b
+        print(short + long + short)
+    else:
+        short = b
+        long = a
+        print(short + long + short)
+    
+combo_string('Hello', 'hi') #→ 'hiHellohi'
+combo_string('hi', 'Hello') #→ 'hiHellohi'
+combo_string('aaa', 'b') #→ 'baaab'
 #----------------------------------------#
 
 #----------------------------------------#
@@ -159,6 +222,7 @@ non_start('java', 'code') → 'avaode'
 non_start('shotl', 'java') → 'hotlava'
 
 Solution: 
+
 #----------------------------------------#
 
 #----------------------------------------#
