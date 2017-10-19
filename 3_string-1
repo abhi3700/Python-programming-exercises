@@ -196,18 +196,25 @@ Solution:
 def combo_string(a, b):
     short = ""
     long = ""
+    
     if len(a) < len(b):
         short = a
         long = b
         print(short + long + short)
+        
+    elif len(a) == len(b) or len(a) == len(b) == 0:
+        print(a + b)
+        
     else:
         short = b
         long = a
         print(short + long + short)
-    
+        
 combo_string('Hello', 'hi') #→ 'hiHellohi'
 combo_string('hi', 'Hello') #→ 'hiHellohi'
 combo_string('aaa', 'b') #→ 'baaab'
+combo_string('c', 'b') #→ 'cb'
+combo_string('', '') #→ ''
 #----------------------------------------#
 
 #----------------------------------------#
@@ -222,7 +229,12 @@ non_start('java', 'code') → 'avaode'
 non_start('shotl', 'java') → 'hotlava'
 
 Solution: 
-
+def non_start(a, b):
+    print(a.replace(a[0], "") + b.replace(b[0], ""))
+    
+non_start('Hello', 'There') #→ 'ellohere'
+non_start('java', 'code') #→ 'avaode'
+non_start('shotl', 'java') #→ 'hotlava'
 #----------------------------------------#
 
 #----------------------------------------#
@@ -237,6 +249,15 @@ left2('java') → 'vaja'
 left2('Hi') → 'Hi'
 
 Solution: 
+def left2(str):
+    if len(str) >= 2:
+        print(str[2:] + str[:2])
+    else:
+        return -1
+    
+left2('Hello') #→ 'lloHe'
+left2('java') #→ 'vaja'
+left2('Hi') #→ 'Hi'
 #----------------------------------------#
 
 #----------------------------------------#
