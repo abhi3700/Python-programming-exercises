@@ -209,6 +209,24 @@ string_match('abc', 'abc') → 2
 string_match('abc', 'axc') → 0
 
 Solution: 
+def string_match(str1, str2):
+  # define the minimum length of the strings
+  short = min(len(str1), len(str2))
+  #define the count
+  count = 0
+  
+  for i in range(short):
+    if str1[i:i+2] == str2[i:i+2]:
+      count = count + 1
+      print(str1[i:i+2]) # prints the 2 substring
+  
+  print(count)
+  
+string_match('xxcaazz', 'xxbaaz') #→ 3
+print("\n")
+string_match('abc', 'abc') #→ 2
+print("\n")
+string_match('abc', 'axc') #→ 0
 #----------------------------------------#
 
 #----------------------------------------#
