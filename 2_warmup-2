@@ -92,7 +92,7 @@ string_splosion('ab') #→ 'aab'
 #----------------------------------------#
 
 #----------------------------------------#
-5. Warmup-2 > 
+5. Warmup-2 > last2 
 
 Question:
 Given a string, return the count of the number of times that a substring length 2 appears in the string and also as the last 2 chars of the string, so "hixxxhi" yields 1 (we won't count the end substring).
@@ -128,6 +128,97 @@ def array_count9(nums):
 array_count9([1, 2, 9]) #→ 1
 array_count9([1, 9, 9]) #→ 2
 array_count9([1, 9, 9, 3, 9]) #→ 3
+#----------------------------------------#
+
+#----------------------------------------#
+7. Warmup-2 > array_front9   
+
+Question:
+Given an array of ints, return True if one of the first 4 elements in the array is a 9. The array length may be less than 4.
+
+Check for these cases:
+array_front9([1, 2, 9, 3, 4]) → True
+array_front9([1, 2, 3, 4, 9]) → False
+array_front9([1, 2, 3, 4, 5]) → False
+array_front9([1, 2, 3]) #→ False
+
+Solution: 
+def array_front9(nums):
+  bool = False
+  end = len(nums)
+  if end > 4:
+    end = 4
+  
+  for i in range(end):
+    if nums[i] == 9:
+      bool = True   
+      print(bool)
+      
+  if (bool != True):    
+    print(False)
+      
+array_front9([1, 2, 9, 3, 4]) #→ True
+#print("\n")
+array_front9([1, 2, 3, 4, 9]) #→ False
+#print("\n")
+array_front9([1, 2, 3, 4, 5]) #→ False
+#print("\n")
+array_front9([1, 2, 3]) #→ False
+
+# Remarks: here, we introduced this parameter, otherwise the program would return False along with True.
+#----------------------------------------#
+
+#----------------------------------------#
+8. Warmup-2 > array123  
+
+Question:
+Given an array of ints, return True if the sequence of numbers 1, 2, 3 appears in the array somewhere.
+
+Check for these cases:
+array123([1, 1, 2, 3, 1]) → True
+array123([1, 1, 2, 4, 1]) → False
+array123([1, 1, 2, 1, 2, 3]) → True
+
+Solution:
+def array123(nums):
+    max = len(nums)
+    bool = False # defined for expected output, otherwise it will print False along with True.
+    for i in range(max):
+      if nums[i:i+3] == [1,2,3]:
+        bool = True
+        print(bool)
+    if bool != True:
+      print(False)
+    
+array123([1, 1, 2, 3, 1]) #→ True
+print("\n")
+array123([1, 1, 2, 4, 1]) #→ False
+print("\n")
+array123([1, 1, 2, 1, 2, 3]) #→ True
+#----------------------------------------#
+
+#----------------------------------------#
+9. Warmup-2 > string_match  
+
+Question:
+Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring. So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
+
+Check for these cases:
+string_match('xxcaazz', 'xxbaaz') → 3
+string_match('abc', 'abc') → 2
+string_match('abc', 'axc') → 0
+
+Solution: 
+#----------------------------------------#
+
+#----------------------------------------#
+10. Warmup-2 >  
+
+Question:
+
+Check for these cases:
+
+Solution: 
 #----------------------------------------#
 
 #----------------------------------------#
