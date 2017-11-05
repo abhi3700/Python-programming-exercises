@@ -9,6 +9,18 @@ cigar_party(50, False) → True
 cigar_party(70, True) → True 
 
 Solution: 
+def cigar_party(cigars, is_weekend):
+    if is_weekend:
+        print("True")
+    else:
+        if cigars >= 40 and cigars <= 60:
+            print("True")
+        else:
+            print("False")
+            
+cigar_party(30, False) #→ False
+cigar_party(50, False) #→ True
+cigar_party(70, True) #→ True
 #----------------------------------------#
 
 #----------------------------------------#
@@ -23,6 +35,17 @@ date_fashion(5, 2) → 0
 date_fashion(5, 5) → 1 
 
 Solution: 
+def date_fashion(you, date):
+    if you <= 2 or date <= 2:
+        print("0")
+    elif you >= 8 or date >=8:
+        print("2")
+    else:
+        print("1")
+        
+date_fashion(5, 10) #→ 2
+date_fashion(5, 2) #→ 0
+date_fashion(5, 5) #→ 1
 #----------------------------------------#
 
 #----------------------------------------#
@@ -37,6 +60,19 @@ squirrel_play(95, False) → False
 squirrel_play(95, True) → True 
 
 Solution: 
+def squirrel_play(temp, is_summer):
+    if is_summer:
+        if temp >= 60 and temp <= 100:
+            print("True")
+    else:
+        if temp >= 60 and temp <= 90:
+            print("True")
+        else:
+            print("False")
+            
+squirrel_play(70, False) #→ True
+squirrel_play(95, False) #→ False
+squirrel_play(95, True) #→ True
 #----------------------------------------#
 
 #----------------------------------------#
@@ -51,6 +87,26 @@ caught_speeding(65, False) → 1
 caught_speeding(65, True) → 0
 
 Solution: 
+def caught_speeding(speed, is_birthday):
+    if is_birthday:
+        if speed <= 65:
+            print("0")
+        elif speed >= 66 and speed <= 85:
+            print("1")
+        elif speed >= 86:
+            print("2")
+    else:
+        if speed <= 60:
+            print("0")
+        elif speed >= 61 and speed <= 80:
+            print("1")
+        elif speed >= 81:
+            print("2")
+        
+    
+caught_speeding(60, False) #→ 0
+caught_speeding(65, False) #→ 1
+caught_speeding(65, True) #→ 0
 #----------------------------------------#
 
 #----------------------------------------#
@@ -65,6 +121,17 @@ sorta_sum(9, 4) → 20
 sorta_sum(10, 11) → 21 
 
 Solution: 
+def sorta_sum(a, b):
+    sum = a+b
+    if sum >= 10 and sum <= 19:
+        print("20")
+    else:
+        print(sum)
+        
+    
+sorta_sum(3, 4) #→ 7
+sorta_sum(9, 4) #→ 20
+sorta_sum(10, 11) #→ 21
 #----------------------------------------#
 
 #----------------------------------------#
@@ -79,6 +146,22 @@ alarm_clock(5, False) → '7:00'
 alarm_clock(0, False) → '10:00'
 
 Solution: 
+def alarm_clock(day, is_vacation):
+    if is_vacation:
+        if day == 0 or day == 6:
+            print("\'10:00\'")
+        else:
+            print("\'10:00\'")
+    else:
+        if day == 0 or day == 6:
+            print("\'10:00\'")
+        else:
+            print("\'7:00\'")
+        
+    
+alarm_clock(1, False) #→ '7:00'
+alarm_clock(5, False) #→ '7:00'
+alarm_clock(0, False) #→ '10:00'
 #----------------------------------------#
 
 #----------------------------------------#
@@ -93,6 +176,19 @@ love6(4, 5) → False
 love6(1, 5) → True 
 
 Solution: 
+def love6(a, b):
+    sum = a + b
+    diff = abs(a - b)
+    
+    if a == 6 or b == 6 or sum == 6 or diff == 6:
+        print("True")
+    else:
+        print("False")
+        
+    
+love6(6, 4) #→ True
+love6(4, 5) #→ False
+love6(1, 5) #→ True
 #----------------------------------------#
 
 #----------------------------------------#
@@ -107,6 +203,21 @@ in1to10(11, False) → False
 in1to10(11, True) → True 
 
 Solution: 
+def in1to10(n, outside_mode):
+        if outside_mode:
+            if n <= 1 or n >= 10:
+                print("True")
+            else: 
+                print("False")
+        else:
+            if n >= 1 and n <= 10:
+                print("True")
+            else:
+                print("False")
+    
+in1to10(5, False) #→ True
+in1to10(11, False) #→ False
+in1to10(11, True) #→ True
 #----------------------------------------#
 
 #----------------------------------------#
@@ -124,3 +235,14 @@ Solution:
 #----------------------------------------#
 
 #----------------------------------------#
+def near_ten(num):
+    mod_num = num % 10
+    if mod_num <= 2:
+        print("True")
+    else:
+        print("False")
+        
+    
+near_ten(12) #→ True
+near_ten(17) #→ False
+near_ten(19) #→ False
