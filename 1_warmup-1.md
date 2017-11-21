@@ -269,7 +269,7 @@ missing_char('kitten', 4) → 'kittn'
 ```
 
 **Solution**:
-```
+```python
 def missing_char(str, n):
     front  = str[:n]  # upto str[n-1] 
     back = str[n+1:]  # from n+1 to end of the string
