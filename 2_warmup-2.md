@@ -1,14 +1,17 @@
-1. Warmup-2 > string_times
+### Warmup-2 > string_times
 
-Question:
+**Question**:
 Given a string and a non-negative int n, return a larger string that is n copies of the original string.
 
-Check for these cases:
+**Check for these cases**:
+```
 string_times('Hi', 2) → 'HiHi'
 string_times('Hi', 3) → 'HiHiHi'
 string_times('Hi', 1) → 'Hi'
+```
 
-Solution: 
+**Solution**:
+```python
 def string_times(str, n):
     if(n>0):
         print(n * str)
@@ -18,20 +21,24 @@ def string_times(str, n):
 string_times('Hi', 2) #→ 'HiHi'
 string_times('Hi', 3) #→ 'HiHiHi'
 string_times('Hi', 1) #→ 'Hi'
+```
 #----------------------------------------#
 
 #----------------------------------------#
-2. Warmup-2 > front_times 
+### Warmup-2 > front_times 
 
-Question:
+**Question**:
 Given a string and a non-negative int n, we'll say that the front of the string is the first 3 chars, or whatever is there if the string is less than length 3. Return n copies of the front;
 
-Check for these cases:
+**Check for these cases**:
+```
 front_times('Chocolate', 2) → 'ChoCho'
 front_times('Chocolate', 3) → 'ChoChoCho'
 front_times('Abc', 3) → 'AbcAbcAbc'
+```
 
-Solution: 
+**Solution**: 
+```python
 def front_times(str, n):
     if(n>0 and str != ""):
         front = str[0:3]
@@ -42,20 +49,24 @@ def front_times(str, n):
 front_times('Chocolate', 2) #→ 'ChoCho'
 front_times('Chocolate', 3) #→ 'ChoChoCho'
 front_times('Abc', 3) #→ 'AbcAbcAbc'
+```
 #----------------------------------------#
 
 #----------------------------------------#
-3. Warmup-2 > string_bits 
+### Warmup-2 > string_bits 
 
-Question:
+**Question**:
 Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
 
-Check for these cases:
+**Check for these cases**:
+```
 string_bits('Hello') → 'Hlo'
 string_bits('Hi') → 'H'
 string_bits('Heeololeo') → 'Hello'
+```
 
-Solution: 
+**Solution**: 
+```python
 def string_bits(str):
     nstr = ""
     for i in range(0,len(str),2):   # e.g. len = 5, so, i = 0,2,4
@@ -65,20 +76,24 @@ def string_bits(str):
 string_bits('Hello') #→ 'Hlo'
 string_bits('Hi') #→ 'H'
 string_bits('Heeololeo') #→ 'Hello'
+```
 #----------------------------------------#
 
 #----------------------------------------#
-4. Warmup-2 > string_splosion 
+### Warmup-2 > string_splosion 
 
-Question:
+**Question**:
 Given a non-empty string like "Code" return a string like "CCoCodCode".
 
-Check for these cases:
+**Check for these cases**:
+```
 string_splosion('Code') → 'CCoCodCode'
 string_splosion('abc') → 'aababc'
 string_splosion('ab') → 'aab'
+```
 
-Solution: 
+**Solution**:
+```python
 def string_splosion(str):
     nstr = ""
     for i in range(len(str)):
@@ -89,35 +104,24 @@ def string_splosion(str):
 string_splosion('Code') #→ 'CCoCodCode'
 string_splosion('abc') #→ 'aababc'
 string_splosion('ab') #→ 'aab'
+```
 #----------------------------------------#
 
 #----------------------------------------#
-5. Warmup-2 > last2 
+### Warmup-2 > array_count9 
 
-Question:
-Given a string, return the count of the number of times that a substring length 2 appears in the string and also as the last 2 chars of the string, so "hixxxhi" yields 1 (we won't count the end substring).
-
-Check for these cases:
-last2('hixxhi') → 1
-last2('xaxxaxaxx') → 1
-last2('axxxaaxx') → 2
-
-Solution: 
-
-#----------------------------------------#
-
-#----------------------------------------#
-6. Warmup-2 > array_count9 
-
-Question:
+**Question**:
 Given an array of ints, return the number of 9's in the array.
 
-Check for these cases:
+**Check for these cases**:
+```
 array_count9([1, 2, 9]) → 1
 array_count9([1, 9, 9]) → 2
 array_count9([1, 9, 9, 3, 9]) → 3
+```
 
-Solution: 
+**Solution**: 
+```python
 def array_count9(nums):
     count = 0
     for num in nums:
@@ -128,21 +132,25 @@ def array_count9(nums):
 array_count9([1, 2, 9]) #→ 1
 array_count9([1, 9, 9]) #→ 2
 array_count9([1, 9, 9, 3, 9]) #→ 3
+```
 #----------------------------------------#
 
 #----------------------------------------#
-7. Warmup-2 > array_front9   
+### Warmup-2 > array_front9   
 
-Question:
+**Question**:
 Given an array of ints, return True if one of the first 4 elements in the array is a 9. The array length may be less than 4.
 
-Check for these cases:
+**Check for these cases**:
+```
 array_front9([1, 2, 9, 3, 4]) → True
 array_front9([1, 2, 3, 4, 9]) → False
 array_front9([1, 2, 3, 4, 5]) → False
 array_front9([1, 2, 3]) #→ False
+```
 
-Solution: 
+**Solution**: 
+```python
 def array_front9(nums):
   bool = False
   end = len(nums)
@@ -166,20 +174,24 @@ array_front9([1, 2, 3, 4, 5]) #→ False
 array_front9([1, 2, 3]) #→ False
 
 # Remarks: here, we introduced this parameter, otherwise the program would return False along with True.
+```
 #----------------------------------------#
 
 #----------------------------------------#
-8. Warmup-2 > array123  
+### Warmup-2 > array123  
 
-Question:
+**Question**:
 Given an array of ints, return True if the sequence of numbers 1, 2, 3 appears in the array somewhere.
 
-Check for these cases:
+**Check for these cases**:
+```
 array123([1, 1, 2, 3, 1]) → True
 array123([1, 1, 2, 4, 1]) → False
 array123([1, 1, 2, 1, 2, 3]) → True
+```
 
-Solution:
+**Solution**:
+```python
 def array123(nums):
     max = len(nums)
     bool = False # defined for expected output, otherwise it will print False along with True.
@@ -195,20 +207,24 @@ print("\n")
 array123([1, 1, 2, 4, 1]) #→ False
 print("\n")
 array123([1, 1, 2, 1, 2, 3]) #→ True
+```
 #----------------------------------------#
 
 #----------------------------------------#
-9. Warmup-2 > string_match  
+### Warmup-2 > string_match  
 
-Question:
+**Question**:
 Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring. So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
 
-Check for these cases:
+**Check for these cases**:
+```
 string_match('xxcaazz', 'xxbaaz') → 3
 string_match('abc', 'abc') → 2
 string_match('abc', 'axc') → 0
+```
 
-Solution: 
+**Solution**: 
+```python
 def string_match(str1, str2):
   # define the minimum length of the strings
   short = min(len(str1), len(str2))
@@ -227,6 +243,7 @@ print("\n")
 string_match('abc', 'abc') #→ 2
 print("\n")
 string_match('abc', 'axc') #→ 0
+```
 #----------------------------------------#
 
 #----------------------------------------#
