@@ -7,3 +7,6 @@ So, after practising programming in python, one gets to know about the hot tech 
 In this tutorials, one will get to learn Python through practice.
 
 
+## Resources
+* Python Practice book - http://anandology.com/python-practice-book/index.html
+* A byte of Python (theory with examples) - https://www.gitbook.com/book/swaroopch/byte-of-python/details
